@@ -1,16 +1,7 @@
 <template>
   <div id="app">
-    <header>
       <!-- Navigation -->
-      <nav>
-        <ul>
-          <li><router-link to="/home">Home</router-link></li>
-          <li><router-link to="/products">Products</router-link></li>
-          <li><router-link to="/cart">Cart</router-link></li>
-          <!-- Add other navigation links here -->
-        </ul>
-      </nav>
-    </header>
+
 
     <main>
       <router-view @add-to-cart="addToCart"></router-view>

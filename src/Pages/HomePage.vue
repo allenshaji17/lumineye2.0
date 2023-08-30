@@ -83,26 +83,6 @@ export default {
     font-family: Arial, sans-serif;
 }
 
-header {
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-}
-
-nav ul {
-    list-style-type: none;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
 
 .hero {
     display: flex;

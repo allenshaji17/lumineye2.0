@@ -7,15 +7,12 @@ import LoginPage from './Pages/LoginPage.vue';
 
 Vue.use(VueRouter);
 
-const routes = [
-    { path: '/home', component: HomePage },
-    { path: '/products', component: ProductListings },
-    { path: '/cart', component: CartPage },
-    { path: '/login', component: LoginPage }
-];
-
-const router = new VueRouter({
-    routes
+export default new VueRouter({
+    routes: [
+        { path: '/', redirect: '/home' }, // Add this line to redirect to home
+        { path: '/home', component: HomePage },
+        { path: '/products', component: ProductListings },
+        { path: '/cart', component: CartPage },
+        { path: '/login', component: LoginPage }
+    ]
 });
-
-export default router;

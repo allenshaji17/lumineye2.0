@@ -1,26 +1,23 @@
 <template>
-  <div id="app">
-    <header>
-      <nav>
-        <ul>
-          <router-link to="/home">Home</router-link>
-          <router-link to="/products">Products</router-link>
-          <router-link to="/cart">Cart</router-link>
-          <router-link to="/login">Login</router-link>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <router-view></router-view>
-    </main>
-    <footer>
-      <p>&copy; 2023 Eyewear Emporium. All rights reserved.</p>
-    </footer>
+  <div>
+          <navbar></navbar> <!-- Add the Navbar component here -->
+    <section id="app">
+      <main>
+        <router-view></router-view>
+      </main>
+      <footer>
+        <p>&copy; 2023 Eyewear Emporium. All rights reserved.</p>
+      </footer>
+    </section>
   </div>
 </template>
 
 <script>
+import Navbar from '@/Pages/NavBar.vue';
 export default {
+  components: {
+    Navbar
+  },
   name: "App",
   // ...other options
 };
@@ -41,27 +38,6 @@ body {
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav ul li {
-  margin-right: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
 }
 
 main {
