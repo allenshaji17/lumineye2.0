@@ -83,29 +83,29 @@ export default {
 <style scoped>
 /* Add component-specific styles here */
 .cart-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
 .cart-table th,
 .cart-table td {
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
 }
 
 .checkout {
-  margin-top: 20px;
-  text-align: right;
+    margin-top: 20px;
+    text-align: right;
 }
 
 button {
-  background-color: #000;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 </style>

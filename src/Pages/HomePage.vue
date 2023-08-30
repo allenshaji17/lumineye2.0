@@ -16,7 +16,7 @@
             <!-- Hero Section -->
             <section class="hero">
                 <div class="hero-content">
-                    <h1>Discover VERY Stylish Eyewear</h1>
+                    <h1>Discover Stylish Eyewear</h1>
                     <p>Find the perfect pair of glasses that complements your style and vision.</p>
                     <a href="#" class="shop-now-btn">Shop Now</a>
                 </div>

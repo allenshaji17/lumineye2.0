@@ -1,5 +1,5 @@
 <template>
-    <section id="product-listings">
+    <div id="product-listings">
         <div class="product" v-for="product in products" :key="product.id">
             <div class="product-image">
                 <img :src="require('@/assets/' + product.image)" :alt="product.name">
@@ -9,7 +9,7 @@
             <span class="product-price">{{ product.price }}</span>
             <button @click="addToCart(product)">Add to Cart</button>
         </div>
-    </section>
+    </div>
 </template>
 
 <script>
@@ -22,14 +22,14 @@ export default {
                     name: 'AIRPLANE MODE //001',
                     description: 'Semi round frame with golden accents',
                     price: '$99.99',
-                    image: 'src/assets/airplane.webp'
+                    image: 'airplane.webp'
                 },
                 {
                     id: 2,
                     name: 'THE GODFATHER BLUE',
                     description: 'Normal blue shades',
                     price: '$129.99',
-                    image: './assets/godfather.jpg'
+                    image: 'godfather.jpg'
                 }
                 // Add more products here
             ]
@@ -41,6 +41,9 @@ export default {
             // Implement addToCart logic here
             // For now, let's just log the selected product
             console.log('Added to cart:', product);
+        },
+        getImagePath(image) {
+            return require(`@/assets/${image}`);
         }
     }
 };
