@@ -5,7 +5,7 @@
       <nav>
         <ul>
           <li><router-link to="/home">Home</router-link></li>
-          <li><router-link to="/product">Products</router-link></li>
+          <li><router-link to="/products">Products</router-link></li>
           <li><router-link to="/cart">Cart</router-link></li>
           <!-- Add other navigation links here -->
         </ul>
@@ -13,7 +13,7 @@
     </header>
 
     <main>
-      <router-view></router-view>
+      <router-view @add-to-cart="addToCart"></router-view>
     </main>
 
     <footer>
@@ -24,7 +24,12 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+      addToCart(product) {
+        console.log('Added to cart:', product);
+      }
+  }
 };
 </script>
 

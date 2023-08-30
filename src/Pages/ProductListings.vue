@@ -29,17 +29,18 @@ export default {
                     name: 'THE GODFATHER BLUE',
                     description: 'Normal blue shades',
                     price: '$129.99',
-                    image: 'godfather.jpg'
+                    image: 'src/assets/godfather.jpg'
                 }
                 // Add more products here
             ]
         };
     },
     methods: {
-        addToCart(products) {
+        addToCart(product) {
+            this.$emit('add-to-cart', product);
             // Implement addToCart logic here
             // For now, let's just log the selected product
-            console.log('Added to cart:', products);
+            console.log('Added to cart:', product);
         }
     }
 };
