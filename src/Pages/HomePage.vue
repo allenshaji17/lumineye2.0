@@ -30,7 +30,7 @@
                 <h2>Featured Products</h2>
                 <div class="product-list">
                     <div v-for="product in featuredProducts" :key="product.id" class="product">
-                        <img :src="product.image" alt="Product Image">
+                        <img :src="require('@/assets/' + product.image)" :alt="product.name">
                         <h3>{{ product.name }}</h3>
                         <p class="product-price">{{ product.price }}</p>
                         <button @click="addToCart(product)">Add to Cart</button>
@@ -70,6 +70,9 @@ export default {
         addToCart(product) {
             // Implement your cart functionality here
             console.log('Added ' + product.name + ' to cart');
+        },
+        getImagePath(image) {
+            return require(`@/assets/${image}`);
         }
     }
 };
