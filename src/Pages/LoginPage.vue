@@ -1,24 +1,31 @@
 <template>
-    <div class="login-page">
-        <div class="login-box">
-            <h2>Login</h2>
-            <form @submit.prevent="login">
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" v-model="username" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" v-model="password" required>
-                </div>
-                <button type="submit" class="login-button">Login</button>
-            </form>
-        </div>
+    <div>
+        <navbar></navbar> <!-- Add the Navbar component here -->
+        <section class="login-page">
+            <div class="login-box">
+                <h2>Login</h2>
+                <form @submit.prevent="login">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" v-model="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" v-model="password" required>
+                    </div>
+                    <button type="submit" class="login-button">Login</button>
+                </form>
+            </div>
+        </section>
     </div>
 </template>
 
 <script>
+import Navbar from '@/Pages/NavBar.vue';
 export default {
+    components: {
+        Navbar
+    },
     data() {
         return {
             username: '',

@@ -1,5 +1,7 @@
 <template>
-    <div id="cart-page">
+    <div>
+            <navbar></navbar> <!-- Add the Navbar component here -->
+    <section id="cart-page">
         <h2>Shopping Cart</h2>
         <table>
             <thead>
@@ -29,11 +31,16 @@
         </table>
         <p>Total: {{ calculateCartTotal() }}</p>
         <button @click="checkout">Checkout</button>
+    </section>
     </div>
 </template>
 
 <script>
+import Navbar from '@/Pages/NavBar.vue';
 export default {
+    components: {
+        Navbar
+    },
     data() {
         return {
             cart: [], // Cart items will be stored here

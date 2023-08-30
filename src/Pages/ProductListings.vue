@@ -1,5 +1,8 @@
 <template>
-    <div id="product-listings">
+    <div>
+        <navbar></navbar> <!-- Add the Navbar component here -->
+    
+    <section id="product-listings">
         <div class="product" v-for="product in products" :key="product.id">
             <div class="product-image">
                 <img :src="require('@/assets/' + product.image)" :alt="product.name">
@@ -9,11 +12,16 @@
             <span class="product-price">{{ product.price }}</span>
             <button @click="addToCart(product)">Add to Cart</button>
         </div>
+    </section>
     </div>
 </template>
 
 <script>
+import Navbar from '@/Pages/NavBar.vue';
 export default {
+    components: {
+        Navbar
+    },
     data() {
         return {
             products: [
@@ -51,6 +59,8 @@ export default {
 
 <style scoped>
 /* Add component-specific styles here */
+
+
 .product {
     border: 1px solid #ccc;
     padding: 20px;

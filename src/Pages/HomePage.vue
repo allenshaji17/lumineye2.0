@@ -1,16 +1,8 @@
 <template>
+    <div>
+            <navbar></navbar> <!-- Add the Navbar component here -->
     <div class="home-page">
-        <header>
-            <!-- Navigation Bar -->
-            <nav>
-                <ul>
-                    <li><router-link to="/home">Home</router-link></li>
-                    <li><router-link to="/products">Products</router-link></li>
-                    <li><router-link to="/cart">Cart</router-link></li>
-                    <li><router-link to="/login">Login</router-link></li>
-                </ul>
-            </nav>
-        </header>
+        
 
         <main>
             <!-- Hero Section -->
@@ -21,7 +13,7 @@
                     <a href="#" class="shop-now-btn">Shop Now</a>
                 </div>
                 <div class="hero-image">
-                    <img src="hero-image.jpg" alt="Stylish Eyewear">
+                    <img :src="heroImage" alt="Stylish Eyewear">
                 </div>
             </section>
 
@@ -43,10 +35,15 @@
             <p>&copy; 2023 Goggles and Spectacles Store. All rights reserved.</p>
         </footer>
     </div>
+    </div>
 </template>
 
 <script>
+import Navbar from '@/Pages/NavBar.vue';
 export default {
+    components: {
+        Navbar
+    },
     data() {
         return {
             featuredProducts: [
@@ -63,7 +60,8 @@ export default {
                     image: 'godfather.jpg'
                 }
                 // Add more featured products here
-            ]
+            ],
+            heroImage: require('@/Pages/hero-image.jpg')
         };
     },
     methods: {
