@@ -29,7 +29,7 @@ export default {
                     name: 'THE GODFATHER BLUE',
                     description: 'Normal blue shades',
                     price: '$129.99',
-                    image: 'src/assets/godfather.jpg'
+                    image: './assets/godfather.jpg'
                 }
                 // Add more products here
             ]
