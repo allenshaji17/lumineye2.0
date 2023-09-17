@@ -47,6 +47,31 @@ export default {
         addToCart(product) {
             this.$emit('add-to-cart', product);
             // Implement addToCart logic here
+            methods: {
+                async addToCart(product) {
+                    const userId = 'user123'; // Replace with actual user ID (if applicable)
+                    const cartRef = db.collection('carts').doc(userId);
+
+                    try {
+                    const cartDoc = await cartRef.get();
+                    const cartData = cartDoc.data();
+
+                    if (!cartDoc.exists || !cartData.products) {
+                        // If the user's cart doesn't exist or is empty, create a new one
+                        await cartRef.set({ products: [product] });
+                    } else {
+                        // If the user's cart already exists, add the product to it
+                        const updatedCart = { products: [...cartData.products, product] };
+                        await cartRef.update(updatedCart);
+                    }
+
+                    console.log('Added to cart:', product);
+                    } catch (error) {
+                    console.error('Error adding to cart:', error);
+                    }
+                },
+            }
+
             // For now, let's just log the selected product
             console.log('Added to cart:', product);
         },
@@ -59,7 +84,9 @@ export default {
 
 <style scoped>
 /* Add component-specific styles here */
-
+/* ignore these they dont even matter its just for a video
+/* lmao they dont even matter 
+/
 
 .product {
     border: 1px solid #ccc;
